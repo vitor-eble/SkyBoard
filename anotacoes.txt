@@ -1,0 +1,5 @@
+login com input onde vai captar o nick
+
+ter uma varivel com a api key
+ai buscar o UUID com a api 'https://playerdb.co/api/player/minecraft/${nick}'
+ai para pegar os profiles dentro do jogo, usar a api 'https://api.hypixel.net/skyblock/profiles?uuid=${uuid}&key=${this.variavelKey}'
