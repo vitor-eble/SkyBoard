@@ -1,2 +1,20 @@
-<p>player-search works!</p>
-asdasd
+<div class="bg-zinc-100 w-full h-dvh flex items-center justify-center p-4">
+  <div class="bg-zinc-200 rounded-lg shadow-lg p-6 w-full max-w-md flex flex-col gap-4">
+    <div class="flex gap-2 flex-col items-center">
+      <h1 class="text-xl font-bold text-center">Bem vindo ao Skyboard</h1>
+      <p class="text-gray-500  text-center font-semibold text-sm">
+        busque o profile de um jogador para ver suas estatísticas e conquistas.
+      </p>
+    </div>
+    <form [formGroup]="form" class="space-y-4" (ngSubmit)="buscarPerfil()" >
+      <div>
+        <label for="playerName" class="block text-base font-medium text-gray-700">nome do jogador</label>
+        <input type="text" id="playerName" name="playerName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none placeholder:text-sm placeholder:font-medium font-medium placeholder:text-gray-500 focus:ring-indigo-500 focus:border-indigo-500" placeholder="coloque o nick do jogador">
+      </div>
+      <div>
+        <button type="submit" class="w-full shadow-md bg-indigo-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none">buscar</button>
+      </div>
+    </form>
+
+  </div>
+</div>

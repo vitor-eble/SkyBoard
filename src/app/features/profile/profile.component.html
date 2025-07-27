@@ -1,1 +1,15 @@
-<p>profile works!</p>
+
+<div *ngIf="perfil">
+  <h2>Perfil SkyBlock</h2>
+
+  <p><strong>UUID:</strong> {{ uuid }}</p>
+  <p><strong>Quantidade de perfis:</strong> {{ perfil.profiles?.length }}</p>
+
+  <div *ngFor="let p of perfil.profiles">
+    <div class="card">
+      <p><strong>Nome:</strong> {{ p.cute_name }}</p>
+      <p><strong>Última vez salvo:</strong> {{ p.members[uuid]?.last_save | date }}</p>
+      <p><strong>Banco:</strong> {{ p.banking?.balance || 0 | number }}</p>
+    </div>
+  </div>
+</div>
