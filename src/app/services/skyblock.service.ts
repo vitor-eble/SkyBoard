@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environments } from '../../environments/environments';
 import { HttpClient } from '@angular/common/http';
-import { map as Map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +13,9 @@ export class SkyblockService {
   constructor(private http: HttpClient) { }
 
   getUUID(nickname: string){
-    return this.http.get<any>(`htps://playerdb.co/api/player/minecraft/${nickname}`)
+    return this.http.get<any>(`https://playerdb.co/api/player/minecraft/${nickname}`)
       .pipe(
-        Map((res: any) => res.data.player.raw_id)
+        map((res: any) => res.data.player.raw_id)
       )
   }
 
