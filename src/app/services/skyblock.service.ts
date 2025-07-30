@@ -7,7 +7,6 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class SkyblockService {
-  private apiKey: string = environments.hypixelApiKey;
 
   constructor(private http: HttpClient) {}
 
@@ -18,21 +17,9 @@ export class SkyblockService {
   }
 
   getSkyblockProfile(uuid: string) {
-    console.log('API Key:', this.apiKey);
-
-    const headers = new HttpHeaders()
-      .set('API-Key', this.apiKey)
-      .set('Content-Type', 'application/json');
-
-    console.log('Headers:', headers);
-    console.log(
-      'URL:',
-      `https://api.hypixel.net/v2/skyblock/profiles?uuid=${uuid}`
-    );
 
     return this.http
-      .get<any>(`https://api.hypixel.net/v2/skyblock/profiles?uuid=${uuid}`, {
-        headers,
+      .get<any>(`/api/hypixel?uuid=${uuid}`, {
         observe: 'response',
       })
       .pipe(
