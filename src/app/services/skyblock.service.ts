@@ -17,9 +17,13 @@ export class SkyblockService {
   }
 
   getSkyblockProfile(uuid: string) {
+    const headers = new HttpHeaders({
+      'API-Key': environments.hypixelApiKey,
+    });
 
     return this.http
       .get<any>(`/api/hypixel?uuid=${uuid}`, {
+        headers,
         observe: 'response',
       })
       .pipe(
